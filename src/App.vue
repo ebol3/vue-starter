@@ -1,6 +1,7 @@
 <template>
   <div class="my-app">
     <h1>Twój e-mail to {{ email }}</h1>
+    <h1>Twój e-mail to</h1>
     <input type="email" v-model="email">
     <div v-if="!email.includes('@')">Twój e-mail jest nie poprawny </div>
     <div v-else-if="email.length < 10">Twój e-mail jest za krótki bo ma {{email.length}} znaków</div>
