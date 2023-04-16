@@ -6,7 +6,10 @@
       <a @click="logMeOut">Wyloguj</a>
     </div>
     <div v-else>
-          <LoginForm @login="(username) => logMeIn(username)"></LoginForm>
+<!--      <LoginForm @login="(username) => logMeIn(username)"></LoginForm>-->
+      <LoginForm @login="(username) => logMeIn(username)" button-label="Wejdź"></LoginForm>
+      <LoginForm @login="(username) => logMeIn(username)" button-label="Wleć"></LoginForm>
+      <LoginForm @login="(username) => logMeIn(username)" :button-label="Math.random() < 0.5 ? 'Etykieta A' : 'Etykieta B'"></LoginForm>
     </div>
   </div>
 </template>
@@ -35,6 +38,10 @@ export default {
     alertMyEmail(){
       alert(this.email);
     }
+  },
+  props: {
+    hungry: Boolean, // rodzic może ustawić stan hungry dziecka na true lub false
+    name: String, // rodzic może ustawić imię dziecka
   },
   components: {
      LoginForm
