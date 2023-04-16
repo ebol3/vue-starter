@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import "milligram";
 export default {
    data() {
      return {
@@ -37,9 +38,11 @@ export default {
       alert(this.email);
     }
   }
+
 }
 
 </script>
+
 
 <style>
 .my-app {
